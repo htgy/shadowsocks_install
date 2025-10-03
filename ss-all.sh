@@ -348,7 +348,7 @@ download_files(){
     cd ${cur_dir}
 
     if   [ "${selected}" == "1" ]; then
-        download "${shadowsocks_python_file}.zip" "${shadowsocks_python_url}"
+        download "${shadowsocks__file}.zip" "${shadowsocks_python_url}"
         if check_sys packageManager yum; then
             download "${shadowsocks_python_init}" "${shadowsocks_python_centos}"
         elif check_sys packageManager apt; then
@@ -566,7 +566,7 @@ install_dependencies(){
         done
     elif check_sys packageManager apt; then
         apt_depends=(
-            gettext build-essential unzip gzip python python-dev python-setuptools curl openssl libssl-dev
+            gettext build-essential unzip gzip curl openssl libssl-dev
             autoconf automake libtool gcc make perl cpio libpcre3 libpcre3-dev zlib1g-dev libev-dev libc-ares-dev git qrencode
         )
 
